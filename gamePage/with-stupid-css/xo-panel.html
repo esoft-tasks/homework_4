@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>Страничка с просто перенесенными стилями из Figma</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+
+            background: rgba(246, 246, 246, 1);
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        header {
+            position: fixed;
+            width: -webkit-fill-available;
+            height: 64px;
+            left: 0;
+            top: 0;
+
+            /* Gray / White */
+
+            background: #FFFFFF;
+            /* Elevation/Lv1 */
+
+            box-shadow: 0px 2px 6px rgba(44, 57, 121, 0.1);
+            border-radius: 0px 0px 16px 16px;
+
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 40px;
+            gap: 10px;
+        }
+
+        button {
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+        }
+
+        #nav-panel {
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 0;
+            gap: 16px;
+
+            height: 32px;
+
+
+            /* Inside auto layout */
+
+            flex: none;
+            flex-grow: 0;
+        }
+
+        #nav-panel div {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 4px 12px;
+            gap: 10px;
+
+            /* Inside auto layout */
+
+            flex: none;
+            flex-grow: 0;
+
+            /* Body / 16px medium */
+
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            /* identical to box height, or 150% */
+
+            letter-spacing: 0.24px;
+
+            /* Gray / 700 */
+
+            color: #373745;
+        }
+
+        #nav-panel .active {
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 4px 12px;
+            gap: 10px;
+
+            background: #60C2AA;
+            border-radius: 200px;
+            color: white;
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+
+        #main-container {
+            margin-top: 64px;
+            padding: 80px 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #subject-list {
+            /* Auto layout */
+
+            display: flex;
+            height: fit-content;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 24px;
+            gap: 24px;
+
+            width: 500px;
+
+            /* Gray / White */
+
+            background: #FFFFFF;
+            /* Elevation / Lv2 */
+
+            box-shadow: 0px 4px 20px rgba(44, 57, 121, 0.09);
+            border-radius: 20px;
+        }
+
+        #subject-list h1 {
+            /* Headers / H1 – bold */
+
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 150%;
+
+            /* Gray / 700 */
+
+            color: #373745;
+            margin: 0;
+        }
+
+        #subject-list > .container {
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 20px;
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 1;
+            align-self: stretch;
+            flex-grow: 0;
+        }
+
+        #subject-list > .container > .subject-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 12px;
+
+            flex: none;
+            order: 0;
+            align-self: stretch;
+            flex-grow: 0;
+        }
+
+        #subject-list .subject-name {
+            /* Headers / H2 – regular */
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+            /* identical to box height, or 120% */
+
+            letter-spacing: 0.15px;
+
+            /* Gray / 700 */
+
+            color: #373745;
+        }
+
+        #subject-list .subject-percent {
+            /* Body / 14px regular */
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            /* identical to box height, or 143% */
+
+            letter-spacing: 0.25px;
+
+            /* Gray / 400 */
+
+            color: #898993;
+        }
+
+        #subject-list .subject-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        #subject-list .subject-info {
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 4px;
+        }
+
+        #game-container {
+            width: 663px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #game-time {
+            width: fit-content;
+            padding: 24px;
+
+            background: #EDEDED;
+            border-radius: 12px;
+
+            /* Headers / Jumbo – black */
+            font-style: normal;
+            font-weight: 900;
+            font-size: 34px;
+            line-height: 40px;
+            /* identical to box height */
+
+            letter-spacing: 0.25px;
+
+            /* Gray / 700 */
+
+            color: #373745;
+        }
+
+        #game-board {
+            width: 663px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            gap: 4px;
+        }
+
+        #game-board .cell {
+            width: 218.33px;
+            height: 218.33px;
+
+            /* Gray / White */
+
+            background: #FFFFFF;
+            border-radius: 12px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #game-step {
+            width: 400px;
+            padding: 12px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Gray / 700
+
+            Text
+            */
+            background: #373745;
+            /* Elevation / Lv2 */
+
+            box-shadow: 0px 4px 20px rgba(44, 57, 121, 0.09);
+            border-radius: 12px;
+
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+            /* identical to box height, or 120% */
+
+            letter-spacing: 0.15px;
+
+            /* Gray / White */
+
+            color: #FFFFFF;
+        }
+
+        #chat-container {
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: column;
+            align-self: flex-end;
+            padding: 0px;
+            margin-bottom: 88px;
+            gap: 20px;
+
+            width: 412px;
+
+            /* Body / 16px regular */
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            /* or 150% */
+
+            letter-spacing: 0.24px;
+
+            /* Gray / 700 */
+
+            color: #373745;
+        }
+
+        .msgs-container {
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+            gap: 12px;
+        }
+
+        .msg-container {
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 12px;
+            gap: 8px;
+
+            max-width: 352px;
+
+            /* Gray / White */
+
+            background: #FFFFFF;
+            /* Elevation/Lv1 */
+
+            box-shadow: 0px 2px 6px rgba(44, 57, 121, 0.1);
+        }
+
+        .msg-container.other {
+            align-self: flex-start;
+            border-radius: 16px 16px 16px 0px;
+        }
+
+        .msg-container.me {
+            align-self: flex-end;
+            border-radius: 16px 16px 0px 16px;
+        }
+
+        .msg-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            width: -webkit-fill-available;
+        }
+
+        .subject-name {
+            /* Body / 14px medium */
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            /* identical to box height, or 143% */
+            letter-spacing: 0.25px;
+        }
+
+        .subject-name.x {
+            color: #60C2AA;
+        }
+        .subject-name.zero {
+            color: #E38BAC;
+        }
+
+        .msg-header .time {
+            /* Body / 14px regular */
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            /* identical to box height, or 143% */
+
+            letter-spacing: 0.25px;
+
+            /* Gray / 400 */
+
+            color: #898993;
+        }
+
+        .msg-interactive-elements {
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: row;
+            padding: 0px;
+            gap: 12px;
+            width: -webkit-fill-available;
+        }
+
+        .msg-interactive-elements button {
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 12px;
+            gap: 8px;
+
+            width: 48px;
+            height: 48px;
+
+            background: #60C2AA;
+            border-radius: 12px;
+        }
+
+        .msg-interactive-elements textarea {
+            resize: none;
+            width: -webkit-fill-available;
+            height: 48px;
+            max-height: max-content;
+            overflow: hidden;
+            /* Textfield */
+
+
+            box-sizing: border-box;
+
+            /* Auto layout */
+
+            padding: 12px 20px;
+            gap: 8px;
+
+            /* Gray / White */
+
+            background: #FFFFFF;
+            /* Gray / 100 */
+
+            border: 1px solid #DCDCDF;
+            border-radius: 12px;
+
+
+            /* Body / 16px regular */
+            font-size: 16px;
+            line-height: 24px;
+            /* identical to box height, or 150% */
+
+            letter-spacing: 0.24px;
+
+            color: #373745;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div id="logo"><img src="../imgs/s-logo.svg"/></div>
+    <div id="nav-panel">
+        <div class="active">Игровое поле</div>
+        <div>Рейтинг</div>
+        <div>Активные игроки</div>
+        <div>История игр</div>
+        <div>Список игроков</div>
+    </div>
+    <button><img src="../imgs/signout-icon.svg"/></button>
+</header>
+<div id="main-container">
+    <div id="subject-list">
+        <h1>Игроки</h1>
+        <div class="container">
+            <div class="subject-container">
+                <div><img class="subject-icon"
+                          src="../imgs/zero.svg"/></div>
+                <div class="subject-info">
+                    <div class="subject-name">Пупкин Владелен Игоревич</div>
+                    <div class="subject-percent">63% побед</div>
+                </div>
+            </div>
+            <div class="subject-container">
+                <div><img class="subject-icon"
+                          src="../imgs/x.svg"/></div>
+                <div class="subject-info">
+                    <div class="subject-name">Плюшкина Екатерина Викторовна</div>
+                    <div class="subject-percent">23% побед</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="game-container">
+        <div id="game-time">05:12</div>
+        <div id="game-board">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"><img src="../imgs/xxl-x.svg"/></div>
+            <div class="cell"><img src="../imgs/xxl-zero.svg"/></div>
+            <div class="cell"><img src="../imgs/xxl-zero.svg"/></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"><img src="../imgs/xxl-x.svg"/></div>
+            <div class="cell"></div>
+        </div>
+        <div id="game-step">Ходит&nbsp;<img src="../imgs/zero.svg"/>&nbsp;Владелен Пупкин</div>
+    </div>
+    <div id="chat-container">
+        <div class="msgs-container">
+            <div class="msg-container other">
+                <div class="msg-header">
+                    <div class="subject-name x">Плюшкина Екатерина</div>
+                    <div class="time">13:40</div>
+                </div>
+                <div class="msg-body">Ну что, готовься к поражению!!1</div>
+            </div>
+            <div class="msg-container me">
+                <div class="msg-header">
+                    <div class="subject-name zero">Пупкин Владлен</div>
+                    <div class="time">13:41</div>
+                </div>
+                <div class="msg-body">Надо было играть за крестики. Розовый — мой не самый счастливый цвет</div>
+            </div>
+            <div class="msg-container me">
+                <div class="msg-header">
+                    <div class="subject-name zero">Пупкин Владлен</div>
+                    <div class="time">13:45</div>
+                </div>
+                <div class="msg-body">Я туплю...</div>
+            </div>
+            <div class="msg-container other">
+                <div class="msg-header">
+                    <div class="subject-name x">Плюшкина Екатерина</div>
+                    <div class="time">13:47</div>
+                </div>
+                <div class="msg-body">Отойду пока кофе попить, напиши в тг как сходишь</div>
+            </div>
+        </div>
+        <div class="msg-interactive-elements">
+            <textarea placeholder="Сообщение..."></textarea>
+            <button><img src="../imgs/send-btn.svg"></button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

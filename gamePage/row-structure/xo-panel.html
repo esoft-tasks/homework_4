@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Страничка с простым каркасом</title>
+</head>
+<body>
+<header>
+    <div id="logo"><img src="../imgs/s-logo.svg"/></div>
+    <div id="nav-panel">
+        <div class="active">Игровое поле</div>
+        <div>Рейтинг</div>
+        <div>Активные игроки</div>
+        <div>История игр</div>
+        <div>Список игроков</div>
+    </div>
+    <div><img src="../imgs/signout-icon.svg"/></div>
+</header>
+<div id="main-container">
+    <div id="subject-list">
+        <div>Игроки</div>
+        <div><span><img src="../imgs/zero.svg"/></span><span><span>Пупкин Владелен Игоревич</span><span>63% побед</span></span>
+        </div>
+        <div><span><img
+                src="../imgs/x.svg"/></span><span><span>Плюшкина Екатерина Викторовна</span><span>23% побед</span></span></div>
+    </div>
+    <div id="game-container">
+        <div id="game-time">05:12</div>
+        <div id="game-board">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"><img src="../imgs/xxl-x.svg"/></div>
+            <div class="cell"><img src="../imgs/xxl-zero.svg"/></div>
+            <div class="cell"><img src="../imgs/xxl-zero.svg"/></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"><img src="../imgs/xxl-x.svg"/></div>
+            <div class="cell"></div>
+        </div>
+        <div id="game-step">Ходит <img src="../imgs/zero.svg"/> Владелен Пупкин</div>
+    </div>
+    <div id="chat-container">
+        <div class="msgs-container">
+            <div class="msg-container">
+                <div class="msg-cloud other">
+                    <div class="subject-name x">Плюшкина Екатерина</div>
+                    <div class="time">13:40</div>
+                    <div class="msg-body">Ну что, готовься к поражению!!1</div>
+                </div>
+            </div>
+            <div class="msg-container">
+                <div class="msg-cloud me">
+                    <div class="subject-name zero">Пупкин Владлен</div>
+                    <div class="time">13:41</div>
+                    <div class="msg-body">Надо было играть за крестики. Розовый — мой не самый счастливый цвет</div>
+                </div>
+            </div>
+            <div class="msg-container">
+                <div class="msg-cloud me">
+                    <div class="subject-name zero">Пупкин Владлен</div>
+                    <div class="time">13:45</div>
+                    <div class="msg-body">Я туплю...</div>
+                </div>
+            </div>
+            <div class="msg-container">
+                <div class="msg-cloud other">
+                    <div class="subject-name x">Плюшкина Екатерина</div>
+                    <div class="time">13:47</div>
+                    <div class="msg-body">Отойду пока кофе попить, напиши в тг как сходишь</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <textarea placeholder="Сообщение..."></textarea>
+            <button><img src="../imgs/send-btn.svg"></button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

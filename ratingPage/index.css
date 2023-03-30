@@ -1,0 +1,133 @@
+* {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.ratingPage__header {
+  position: fixed;
+  width: -webkit-fill-available;
+  height: 64px;
+  left: 0;
+  top: 0;
+  background: #ffffff;
+  box-shadow: 0px 2px 6px rgba(44, 57, 121, 0.1);
+  border-radius: 0px 0px 16px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  gap: 10px;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+#nav-panel {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 16px;
+  height: 32px;
+  flex: none;
+  flex-grow: 0;
+}
+#nav-panel div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 4px 12px;
+  gap: 10px;
+  flex: none;
+  flex-grow: 0;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.24px;
+  color: #373745;
+}
+#nav-panel .active {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 4px 12px;
+  gap: 10px;
+  background: #60c2aa;
+  border-radius: 200px;
+  color: white;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.ratingPage__section {
+  display: flex;
+  height: calc(100vh - 64px);
+  margin: 64px auto 0;
+  align-items: center;
+  justify-content: center;
+  background: #e5e5e5;
+}
+.ratingPage__section .rating {
+  width: 65%;
+  height: 90%;
+  padding: 25px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(44, 57, 121, 0.09);
+  border-radius: 30px;
+  overflow-y: auto;
+}
+.ratingPage__section .rating__title {
+  font-weight: 700;
+  font-size: 22px;
+  color: #373745;
+}
+.ratingPage__section .rating__list_header {
+  display: flex;
+  margin-top: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #EEEFF5;
+}
+.ratingPage__section .rating__list_header div {
+  width: 15%;
+  color: #373745;
+  line-height: 24px;
+  font-weight: 500;
+}
+.ratingPage__section .rating__list_header div:first-child {
+  width: 40%;
+}
+.ratingPage__section .rating__list_users__user {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #EEEFF5;
+}
+.ratingPage__section .rating__list_users__user div {
+  width: 15%;
+  color: #373745;
+  line-height: 24px;
+  font-weight: 500;
+}
+.ratingPage__section .rating__list_users__user div:first-child {
+  width: 40%;
+}
+.ratingPage__section .rating__list_users__user div:nth-child(2) {
+  color: #69b849;
+}
+.ratingPage__section .rating__list_users__user div:nth-child(3) {
+  color: #e93e3e;
+}/*# sourceMappingURL=index.css.map */
